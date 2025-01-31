@@ -1,0 +1,56 @@
+on:
+  workflow_dispatch:
+    inputs:
+      baseUrl:
+        description: 'Paste the base URL'
+        default:  'https://www.vivara.com.br/'
+        required: true
+        type: string
+
+name: Automação Vivara Workflow
+jobs:
+  E2eTests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    name: Execute Desktop Tests
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Execute Desktop Tests on Github Actions
+        uses: cypress-io/github-action@v6
+        with:
+          command: npx cypress run --browser chrome --config baseUrl=${{ inputs.baseUrl }},viewportWidth=1922,viewportHeight=1082 --env environment=desktop
+
+  # mobileE2eTests:
+  #   runs-on: Self-Hosted
+  #   timeout-minutes: 60
+  #   name: Execute Mobile Tests
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #       with:
+  #         repository: 'quality-digital/vivara-automation-test'
+
+  #     - name: Use Node.js
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '18.x'
+
+  #     - name: Install dependencies
+  #       run: npm ci
+
+  #     - name: Execute Mobile Tests on Github Actions
+  #       uses: cypress-io/github-action@v5
+  #       with:
+  #         command: npx cypress run --browser chrome --config baseUrl=${{ inputs.baseUrl }},viewportWidth=362,viewportHeight=802 --env environment=mobile

@@ -1,0 +1,9 @@
+{
+  "correctEmail": "kaique.ramos@acct.global",
+  "correctPassword": "Teste@2023",
+  "incorrectPassword": ".Z*565g7g6T4T4",
+  "cookieAuth": "VtexIdclientAutCookie_lojavivara",
+  "cookieAuht2":"VtexIdclientAutCookie_6f63f7bb-9065-4229-a819-536c0010468b",
+  "cookieValue":"eyJhbGciOiJFUzI1NiIsImtpZCI6IjczOEU5OEY5MDJBNEZDQTg0OUM2NDg2MkEzRTgzMzc1MTcyODE2NkMiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJsdWNhcy5qb25lc0BhY2N0Lmdsb2JhbCIsImFjY291bnQiOiJsb2phdml2YXJhIiwiYXVkaWVuY2UiOiJ3ZWJzdG9yZSIsInNlc3MiOiI4MjNmNmYyMi1hMDEyLTQ5MGYtYTA2OC0wZDkwNjJjOThkY2MiLCJleHAiOjE3MDQ3OTUzNTYsInVzZXJJZCI6ImEzYmEyYWRkLTVlNTYtNDc5MC05YjVjLWIxOWE0YWE2NTVlNyIsImlhdCI6MTcwNDcwODk1NiwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6IjQ5NGM3OTkwLWYwYzAtNDljOS1iNjE3LTNhMGNiOTU0OGZiNiJ9.VPiRMemm5qODTXYS5od8Cru--HgFAEAjQAbus7P8Ou03p5FDhtw0a-jtKmirR16MIklrgemFv49jUOiLwXKdYw",
+  "wrongEmail": "adasdwq@gmail.com"
+}

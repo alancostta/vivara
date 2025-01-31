@@ -1,0 +1,11 @@
+log/*
+.DS_Store
+cypress/videos/*
+allure-report/*
+allure-results/*
+results/*
+cucumber-json
+node_modules
+yarn.lock
+cypress/screenshots/
+cypress/videos/

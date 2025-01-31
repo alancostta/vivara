@@ -1,0 +1,78 @@
+{
+  "name": "pg.automacao-funcional",
+  "version": "1.0.0",
+  "description": "Regression tests with cypress and cucumber",
+  "main": "index.js",
+  "scripts": {
+    "testbs:desktop": "browserstack-cypress run --sync --specs cypress/integration/Desktop/**/*",
+    "testbs:mobile": "browserstack-cypress run --sync --specs cypress/integration/Mobile/**/*",
+    "test:desk": "cypress run --browser chrome --env TAGS=@Desk --config-file ./desktop.config.js",
+    "test:mobile": "cypress run --browser chrome --env TAGS=@Mobile --config-file ./mobile.config.js",
+    "test:tablet": "cypress run --browser chrome --env TAGS=@Tablet --config-file ./tablet.config.js",
+    "test desk pdp": "cypress run --browser chrome --env TAGS=@Desk --config-file ./desktop.config.js --spec cypress/integration/Pdp.feature",
+    "test desk checkout": " cypress run --browser chrome --env TAGS=@Desk --config-file ./desktop.config.js --spec cypress/integration/CartTest.feature",
+    "test desk plp": "cypress run --browser chrome --env TAGS=@Desk --config-file ./desktop.config.js --spec cypress/integration/PLP.feature",
+    "test desk login": " cypress run --browser chrome --env TAGS=@Desk --config-file ./desktop.config.js --spec cypress/integration/LoginTest.feature",
+    "test desk account": " cypress run --browser chrome --env TAGS=@Desk --config-file ./desktop.config.js --spec cypress/integration/MyAccountTest.feature",
+    "test desk navigation": "cypress run --browser chrome --env TAGS=@Desk --config-file ./desktop.config.js --spec cypress/integration/NavigationTest.feature",
+    "test mobile pdp": "cypress run --browser chrome --env TAGS=@Mobile --config-file ./mobile.config.js --spec cypress/integration/Pdp.feature",
+    "test mobile checkout": "cypress run --browser chrome --env TAGS=@Mobile --config-file ./mobile.config.js --spec cypress/integration/Checkout.feature",
+    "test mobile cart": "cypress run --browser chrome --env TAGS=@Mobile --config-file ./mobile.config.js --spec cypress/integration/CartTest.feature",
+    "test mobile plp": "cypress run --browser chrome --env TAGS=@Mobile --config-file ./mobile.config.js --spec cypress/integration/PLP.feature",
+    "test mobile login": "cypress run --browser chrome --env TAGS=@Mobile --config-file ./mobile.config.js --spec cypress/integration/Login.feature",
+    "test mobile account": "cypress run --browser chrome --env TAGS=@Mobile --config-file ./mobile.config.js --spec cypress/integration/MyAccountTest.feature",
+    "test mobile navigation": "cypress run --browser chrome --env TAGS=@Mobile --config-file ./mobile.config.js --spec cypress/integration/NavigationTest.feature",
+    "prepare": "husky install",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "percy test": "percy exec -- cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "regression",
+    "test",
+    "e2e"
+  ],
+  "author": "ACCT.GLOBAL",
+  "license": "ISC",
+  "devDependencies": {
+    "@percy/cypress": "^3.1.2",
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "browserstack-cypress-cli": "^1.11.0",
+    "cypress": "^12.17.4",
+    "cypress-browser-permissions": "^1.1.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "husky": "^7.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/steps",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber",
+      "nonGlobalStepDefinitions": true
+    }
+  },
+  "dependencies": {
+    "allure-commandline": "^2.24.0",
+    "archiver": "^5.3.0",
+    "cypress-real-events": "^1.11.0",
+    "cypress-xpath": "^1.6.2",
+    "faker": "^5.5.3",
+    "faker-es6": "^7.0.0",
+    "npx": "^3.0.0",
+    "yargs": "^17.3.1"
+  }
+}

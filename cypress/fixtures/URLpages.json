@@ -1,0 +1,16 @@
+[
+  {
+    "Checkout": "https://secure.vivara.com.br/checkout?orderFormId=7d289df1930a4b53b70d703d22fedc25#/shipping",
+    "cart": "https://secure.vivara.com.br/checkout?orderFormId=7d289df1930a4b53b70d703d22fedc25#/cart",
+    "Email": "https://secure.vivara.com.br/checkout?orderFormId=7d289df1930a4b53b70d703d22fedc25#/email"
+  },
+  
+  {
+    "Checkout": "https://secure.vivara.com.br/checkout?orderFormId=124293685de64112861c8a82a74a929f#/shipping",
+    "cart": "https://secure.vivara.com.br/checkout?orderFormId=124293685de64112861c8a82a74a929f#/cart",
+    "Email": "https://secure.vivara.com.br/checkout?orderFormId=124293685de64112861c8a82a74a929f#/email"
+  },
+  {
+    "cart": "/checkout#/cart"
+  }
+]
