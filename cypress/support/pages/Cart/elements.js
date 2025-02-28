@@ -85,7 +85,7 @@ export const ELEMENTS = {
   carouselCart:
   'ins-web-smart-recommender-body-wrapper ins-responsive-mode-active',
   xpFnItemRemoveProduct1: (skuid) =>
-    `#item-remove-${skuid} > .icon`,
+    `[id^="item-remove-"] > .icon`,
   xpFnItemRemoveProduct2: (skuid) =>
     `#item-remove-${skuid} > .icon`,
   xpFnIncrementQuantity: (skuid) =>

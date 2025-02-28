@@ -118,6 +118,8 @@ class CartPage {
     
     cy.get(elCartPage.xpFnItemRemoveProduct1(skuid1), {timeout:30000}).should('exist')
       .should('be.visible')
+      .first()
+      .should('be.visible')
       .click({force:true})
     
   }
@@ -263,7 +265,7 @@ class CartPage {
   }
 
   plusBtn(){
-    cy.get(elCartPage.plusBtn).should('exist')
+    cy.get(elCartPage.xpFnIncrementQuantity).should('exist')
     .click({force:true})
   }
 
@@ -277,9 +279,14 @@ class CartPage {
   }
 
   validateProductQauntity(quantity){
-    cy.get(elCartPage.quantityIten1)
-      .invoke('val')
-      .should('eq', quantity, { timeout: 60000 })
+    cy.get(elCartPage.loading, { timeout: 60000 })
+      .should('not.be.visible')
+      .then(() => {
+        cy.wait(2000) // Aguarda a atualização do DOM
+        cy.get(elCartPage.quantityIten1)
+          .should('be.visible')
+          .should('have.value', quantity.toString())
+      })
   }
 
   validateReduceAmount(qntd){

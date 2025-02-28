@@ -1,5 +1,5 @@
 export const ELEMENTS = {
-  btnAddToCart: '.product-details__buttons > [data-testid="buy-button"]',
+  btnAddToCart: '[data-testid="buy-button"]',
   btnAddToCartMobile:
     '[data-testid="buy-button"]',
   btnCalcShipping:

@@ -20,7 +20,7 @@ class PdpPage {
   }
 
   clickBtnAddToCart() {
-      cy.get(elPdpPage.btnAddToCart, {timeout: 15000}).should('be.visible').click({ force: true })
+      cy.get(elPdpPage.btnAddToCart, {timeout: 15000}).should('be.visible').first().click({ force: true })
     
   }
 

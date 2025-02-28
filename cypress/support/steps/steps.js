@@ -598,7 +598,7 @@ Then('I verify the categories available on menu', () => {
   } else {
     HomePage.clickMenuCategories()
     itemsCategoriesMobile.forEach((itemsCategoriesMobile) => {
-      HomePage.validateLinksOnMenuCategoriesmobile()
+    HomePage.validateLinksOnMenuCategoriesmobile()
     })
   }  
 })
