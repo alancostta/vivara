@@ -265,17 +265,9 @@ class CartPage {
   }
 
   plusBtn(){
-    cy.get(elCartPage.xpFnIncrementQuantity).should('exist')
-    .click({force:true})
-  }
-
-  reduceAmount1(){
-    cy.get(elCartPage.minusBtn1).should('not.be.disabled')
-    .click({force: true})
-  }
-
-  reduceAmount(){
-    cy.get(elCartPage.minusBtn).click({force: true})
+    cy.get(elCartPage.plusBtn)
+      .should('exist')
+      .click({force:true})
   }
 
   validateProductQauntity(quantity){
@@ -283,17 +275,28 @@ class CartPage {
       .should('not.be.visible')
       .then(() => {
         cy.wait(2000) // Aguarda a atualização do DOM
+        cy.get(elCartPage.plusBtn)
+        .click({force: true})
         cy.get(elCartPage.quantityIten1)
           .should('be.visible')
           .should('have.value', quantity.toString())
       })
+  }
+  
+  reduceAmount(){
+    cy.get(elCartPage.minusBtn).click({force: true})
+  }
+
+  reduceAmount1(){
+    cy.get(elCartPage.minusBtn1).should('not.be.disabled')
+    .click({force: true})
   }
 
   validateReduceAmount(qntd){
     cy.wait(1500)
     cy.get(elCartPage.quantityIten1)
       .invoke('val')
-      .should('eq', qntd, { timeout: 60000 })
+      .should('eq', qntd, { timeout:60000})
   }
 
   validateRemoveProduct(){

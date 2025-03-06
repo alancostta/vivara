@@ -38,3 +38,5 @@ git commit -m 'informações sobre o que terá nesse commit'
 5 -Subir os arquivos para o GIT
 git push irá jogar todas as modificações para a sua pasta no git
 
+Para gerar evidências nas pastas de screenshot e videos, precisa rodar o código npm run run:mobile (pra mobile) e npm run run:desktop (pra desktop) npm run run:tablet (pra tablet)
+Para rodar com interface visual: npm run cypress:mobile, npm run cypress:tablet, npm run cypress:desktop

@@ -1,24 +1,32 @@
-const { defineConfig } = require('cypress');
+const cypress = require('cypress')
+const { defineConfig } = cypress;
 const { cypressBrowserPermissionsPlugin } = require('cypress-browser-permissions');
 const fs = require('fs');
 const path = require('path');
 
-// Definindo o caminho para as pastas de vídeo e screenshots
-const videosDir = path.join(__dirname, 'cypress', 'videos');
-const screenshotsDir = path.join(__dirname, 'cypress', 'screenshots');
+// Device specific configurations
+const deviceConfigs = {
+  mobile: {
+    viewportWidth: 360,
+    viewportHeight: 760
+  },
+  tablet: {
+    viewportWidth: 768,
+    viewportHeight: 1024
+  },
+  desktop: {
+    viewportWidth: 1920,
+    viewportHeight: 1080
+  }
+};
 
-// Garantir que as pastas existam ou sejam criadas
-if (!fs.existsSync(videosDir)) {
-  fs.mkdirSync(videosDir, { recursive: true });
-}
-
-if (!fs.existsSync(screenshotsDir)) {
-  fs.mkdirSync(screenshotsDir, { recursive: true });
-}
+// Get viewport config based on device
+const device = process.env.CYPRESS_device || 'desktop';
+const deviceConfig = deviceConfigs[device] || deviceConfigs.desktop;
 
 module.exports = defineConfig({
-  viewportWidth: 1920,
-  viewportHeight: 1080,
+  viewportWidth: deviceConfig.viewportWidth,
+  viewportHeight: deviceConfig.viewportHeight,
   chromeWebSecurity: false,
   video: true, // Garante que o vídeo seja gravado em falhas
   videoCompression: false,
